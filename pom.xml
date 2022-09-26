@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>localLive</groupId>
+	<artifactId>localLive</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>localLive</name>
+	<url>http://www.egovframe.go.kr</url>
+	
+	<licenses>
+        <license>
+            <name>The Apache Software License, Version 3.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-3.0.txt</url>
+        </license>
+    </licenses>
+	
+	<repositories>
+		<repository>
+			<id>mvn2</id>
+			<url>http://repo1.maven.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>egovframe</id>
+			<url>http://www.egovframe.go.kr/maven/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>egovframe2</id>
+			<url>http://maven.egovframe.kr:8080/maven/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<dependencies>
+		<!-- 표준프레임워크 실행환경 -->
+		<dependency>
+			<groupId>egovframework.rte</groupId>
+			<artifactId>egovframework.rte.ptl.mvc</artifactId>
+			<version>3.6.0</version>
+			<exclusions>
+		    	<exclusion>
+		    		<artifactId>commons-logging</artifactId>
+		    		<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>egovframework.rte</groupId>
+			<artifactId>egovframework.rte.psl.dataaccess</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>egovframework.rte</groupId>
+			<artifactId>egovframework.rte.fdl.idgnr</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>egovframework.rte</groupId>
+			<artifactId>egovframework.rte.fdl.property</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+		<!-- // 표준프레임워크 실행환경 -->
+		
+		<!-- Servlet API 3.0 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+        <!-- // Servlet API 3.0 -->
+        
+        <!-- maria DB -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+        <!-- // maria DB -->
+        
+        <!-- DBCP 데이터 풀 커넥션 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+        <!-- // DBCP 데이터 풀 커넥션 -->
+        
+        <!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		<!-- // @Inject -->
+		
+		<!-- JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- // JSON -->
+	</dependencies>
+	
+	<build>
+		<finalName>matpan</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

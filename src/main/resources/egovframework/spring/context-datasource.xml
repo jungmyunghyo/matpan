@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	<util:properties id="setting" location="classpath:/egovframework/properties/setting.properties"/>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="#{setting['jdbc.driverClassName']}"/>
+		<property name="url" value="#{setting['jdbc.url']}"/>
+		<property name="username" value="#{setting['jdbc.username']}"/>
+		<property name="password" value="#{setting['jdbc.password']}"/>
+	</bean>
+</beans>

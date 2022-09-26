@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.matpansoft.main.mapper.TestMapper">
+	<select id="testMappertest" parameterType="matMap" resultType="matMap">
+		select 
+			tu.no,
+			tu.userid,
+			tu.siteid,
+			tu.userkind,
+			tu.cust_no
+		from
+			t_user as tu
+		limit 100
+	</select>
+</mapper>
